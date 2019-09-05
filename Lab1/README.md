@@ -10,8 +10,8 @@ OpenShift4クラスターをAWS上に構築し，OpenShift4コンソールやコ
 ## 実施手順
 作業は以下の手順どおりに進めます。
 
-2. [OpenShift4クラスターへのログインと動作確認](2_ocp4-tour.md)
-3. [コンテナイメージのビルドとデプロイ](3_ocp4-build-deploy.md)
+1. [OpenShift4クラスターへのログインと動作確認](2_ocp4-tour.md)
+2. [コンテナイメージのビルドとデプロイ](3_ocp4-build-deploy.md)
 
 ## References
 

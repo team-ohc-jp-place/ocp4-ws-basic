@@ -36,10 +36,10 @@
 1. OpenShift4クラスターにocコマンドでログインします。
     
     ```
-  $ oc login <OpenShift_API>
+    $ oc login <OpenShift_API>
     
     Username: "<User_ID>" を入力
-Password: "<User_PW>" を入力
+    Password: "<User_PW>" を入力
     ```
     
     >**※注意: ワークショップ参加者の方は，必ず自身に割当てられた <OpenShift_API>，<User_ID>，<User_PW> を使用してください。**  
@@ -52,7 +52,7 @@ Password: "<User_PW>" を入力
     >
     >実行例) 
     >```
->$ oc login https://api.group00-ocp4ws-basic.capsmalt.org:6443  
+    >$ oc login https://api.group00-ocp4ws-basic.capsmalt.org:6443  
     >Username: user00
     >Password: openshift
     >```
@@ -125,7 +125,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
     さらに下方では，Podによるメモリ利用量と，利用量の大きい順にTOP10が一覧表示されています。  
 
     ![](images/ocp4-console-project-openshift-console-status.png)
-  
+
 1. openshift-consoleプロジェクトの利用状況について詳細に見ていきます。
 
     グラフ内にカーソルを合わせて選択します。
