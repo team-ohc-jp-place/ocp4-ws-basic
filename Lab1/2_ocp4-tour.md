@@ -30,11 +30,11 @@
 ## 2-2. OpenShift4へのログイン
 ### 2-2-1. ocコマンドによるログイン(oc login)
 1. Setupで作成したCodeReady Workspacesを開いてください。右下のTerminalタブを選択すると、ブラウザ上でTerminalが操作できるようになります。以降コマンドが必要な作業は全てこちらのTerminalで操作して頂きます。
-    
+  
     ![](images/codeready_1.png)
   
 1. OpenShift4クラスターにocコマンドでログインします。
-    
+  
     ```
     $ oc login <OpenShift_API>
     
@@ -46,13 +46,13 @@
     >
     >
     >例) 「OpenShift_API」へのログイン情報
-    > - `<OpenShift_API>`: **https://api.group00-ocp4ws-basic.capsmalt.org:6443**
+    > - `<OpenShift_API>`: **https://api.ws.ocp41.nosue.mobi:6443**
     > - `<User_ID>`: **user00**
     > - `<User_PW>`: **openshift**
     >
     >実行例) 
     >```
-    >$ oc login https://api.group00-ocp4ws-basic.capsmalt.org:6443  
+    >$ oc login https://api.ws.ocp41.nosue.mobi:6443  
     >Username: user00
     >Password: openshift
     >```
@@ -62,16 +62,16 @@
 
 >**注意: ワークショップ参加者の方は，必ず自身に割当てられた <OpenShift_Console>，<User_ID>，<User_PW> を使用してください。**  
 >例) 「OpenShift4コンソール」のログイン情報
-> - `<OpenShift_Console>`: **https://console-openshift-console.apps.group00-ocp4ws-basic.capsmalt.org**
+> - `<OpenShift_Console>`: **https://console-openshift-console.apps.ws.ocp41.nosue.mobi**
 > - capsmalt's group を選択
 > - `<User_ID>`: **user00**
 > - `<User_PW>`: **openshift**
 
-Privacy Errorが出た場合は，[Advanced] > [Proceed to oauth-openshift.apps.group00-ocp4ws-basic.capsmalt.org (unsafe)] のように選択して進めてください。
+Privacy Errorが出た場合は，[Advanced] > [Proceed to oauth-openshift.apps.ws.ocp41.nosue.mobi (unsafe)] のように選択して進めてください。
 
 ![](images/ocp4-console-login-error.png)
 
-[capsmalt's group] を選択し，ログイン情報を入力してコンソールにログインします。
+[capsmalt's group] または [htpasswd]を選択し，ログイン情報を入力してコンソールにログインします。
 
 ![](images/ocp4-console-login-group.png)
 
@@ -255,7 +255,7 @@ group00-ocp4ws-basic-b9qqj-worker-ap-northeast-1a-t6rgd` や `group00-ocp4ws-bas
 ### 2-3-3. K8sワークロード の動作確認 (ocコマンド使用)
 ocコマンドを使用して，K8sワークロードの動作状況を確認してみましょう。  
 
->クラスターにログインしてない場合は，`$ oc login <OpenShift_API>` でログインします。  
+>クラスターにログインしてない場合は，`$ oc login https://api.ws.ocp41.nosue.mobi:6443` でログインします。  
 >
 >ocコマンドでのログイン方法が分からない場合は，[2-2-1. ocコマンドによるログイン(oc login)](2_ocp4-tour.md#2-2-1-oc%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3oc-login)を参照ください。
 >
@@ -333,7 +333,7 @@ ocコマンドを使用して，K8sワークロードの動作状況を確認し
     >```
     >$ oc project user00-lab1-2
     >
-    >Now using project "user00-lab1-2" on server "https://api.group00-ocp4ws-basic.capsmalt.org:6443".
+    >Now using project "user00-lab1-2" on server "https://api.ws.ocp41.nosue.mobi:6443".
     >```
 
     >Tips:

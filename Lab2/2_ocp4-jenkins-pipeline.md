@@ -21,7 +21,7 @@
 
 ocコマンドを使用して，クラスターにログインします。
 
-`$ oc login <OpenShift_API>` 
+`$ oc login https://api.ws.ocp41.nosue.mobi:6443` 
 
 >
 >ocコマンドでのログイン方法が分からない場合は，[2-2-1. ocコマンドによるログイン(oc login)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/2_ocp4-tour.md#2-2-1-oc%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3oc-login)を参照ください。
@@ -62,6 +62,7 @@ ocコマンドを使用して，クラスターにログインします。
     nodejs-sample-pipeline  # oc createで作成されたPipeline
     
     $ oc get buildconfig/nodejs-sample-pipeline -o yaml　# 中身を確認
+    ```
 
 ### 2-2-3. ビルドパイプラインの実行
 1. パイプラインを使用してビルドします。
@@ -80,7 +81,7 @@ ocコマンドを使用して，クラスターにログインします。
     ```
     
     上記出力結果の "HOST/PORT" の情報をコピーして，ブラウザのURL欄にペーストして確認します。  
-    (例: `jenkins-jenkins-user00.apps.group00-ocp4ws-basic.capsmalt.org`)
+    (例: `jenkins-jenkins-user00.apps.ws.ocp41.nosue.mobi`)
 
     OpenShift4のログイン情報を使用してJenkinsのUIにログインします。
     
@@ -222,7 +223,7 @@ ocコマンドを使用して，クラスターにログインします。
     ```
 
     上記出力結果の "HOST/PORT" の情報をコピーして，ブラウザのURL欄にペーストして確認します。  
-    (例: `nodejs-mongodb-example-jenkins-user00.apps.group00-ocp4ws-basic.capsmalt.org`)  
+    (例: `nodejs-mongodb-example-jenkins-user00.apps.ws.ocp41.nosue.mobi`)  
 
     ![](images/ocp4-lab2-2-jenkins-pipeline-nodejs-app-confirm.png)
     

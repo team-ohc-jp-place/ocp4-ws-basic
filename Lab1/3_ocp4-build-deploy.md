@@ -163,7 +163,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
     
 ### 3-3-5. アプリケーションの動作確認
 1. [Networking] > [Routes] を選択し，blog用のRouter(例: `blog-user00`)行にある **Location欄のリンク** を開きます。
-    例) `http://blog-user00-blog-user00.apps.group00-ocp4ws-basic.capsmalt.org`
+    例) `http://blog-user00-blog-user00.apps.ws.ocp41.nosue.mobi`
 
     ![](images/ocp4-lab1-3-blog-confirm-app.png)
 
