@@ -1,11 +1,11 @@
 # 3. コンテナイメージのビルドとデプロイ
 アプリケーションをOpenShift4クラスターで動作させます。Developer Catalogのテンプレートを使用してアプリケーションをデプロイします。
 
-- A) 新規プロジェクトの作成 [(3-3-1)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-1-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88namespace%E3%81%AE%E4%BD%9C%E6%88%90)
-- B) カタログからデプロイ [(3-3-2)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-2-%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%81%A7%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
-- C) アプリのPod動作の確認 [(3-3-3)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-3-blog%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%8A%B6%E6%85%8B%E3%82%92%E7%A2%BA%E8%AA%8D)
-- D) Routerの作成 [(3-3-4)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-4-%E5%A4%96%E9%83%A8%E3%81%8B%E3%82%89%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE-route-%E3%82%92%E4%BD%9C%E6%88%90)
-- E) アプリの動作確認 [(3-3-5)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-5-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D)
+- A) 新規プロジェクトの作成 [(3-3-1)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-1-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88namespace%E3%81%AE%E4%BD%9C%E6%88%90)
+- B) カタログからデプロイ [(3-3-2)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-2-%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%81%A7%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
+- C) アプリのPod動作の確認 [(3-3-3)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-3-blog%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%8A%B6%E6%85%8B%E3%82%92%E7%A2%BA%E8%AA%8D)
+- D) Routerの作成 [(3-3-4)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-4-%E5%A4%96%E9%83%A8%E3%81%8B%E3%82%89%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE-route-%E3%82%92%E4%BD%9C%E6%88%90)
+- E) アプリの動作確認 [(3-3-5)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-5-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D)
 
 ![](images/ocp4-Lab1-3_overview.png)
 
@@ -121,7 +121,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
 
     >Tips:  
     >
-    >以前の手順で[プロジェクトのリソース状況を確認 (2-3-1)](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/2_ocp4-tour.md#2-3-1-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%88%A9%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E7%A2%BA%E8%AA%8D)した時と同じようにPrometheus(+Grafana)のモニタリング状況を確認したり，yaml定義の確認，Eventの確認などができます。  
+    >以前の手順で[プロジェクトのリソース状況を確認 (2-3-1)](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/2_ocp4-tour.md#2-3-1-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%88%A9%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E7%A2%BA%E8%AA%8D)した時と同じようにPrometheus(+Grafana)のモニタリング状況を確認したり，yaml定義の確認，Eventの確認などができます。  
     >
     >さらに，Pod内のコンテナ内でコマンド実行も行えます。  
     >以下図のように [Terminal] を選択するとブラウザ上でターミナル内操作が行なえます。  
@@ -147,7 +147,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
     >Tips:
     >
     >「あれ？Service作ったっけ？」と思われた方，その感覚は正しいです。明示的には作成していません。  
-    >今回は[3-3-2の手順](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/3_ocp4-build-deploy.md#3-3-2-%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%81%A7%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4) で，Pythonテンプレートでblogアプリケーションをデプロイした際に，Podだけでなく，"Service" も同時に作成されています。
+    >今回は[3-3-2の手順](https://github.com/team-ohc-jp-place/ocp4-ws-basic/blob/20190906/Lab1/3_ocp4-build-deploy.md#3-3-2-%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%81%A7%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4) で，Pythonテンプレートでblogアプリケーションをデプロイした際に，Podだけでなく，"Service" も同時に作成されています。
     >その際，Service名はアプリ名と同じ名前が指定されています。
     >
     >Developer Catalogで選択したテンプレートは，Kubernetes上でアプリを動作させるために必ず必要になるリソース(PodやServiceなど)や，便利にアプリケーションを管理できるようにするための仕組みを一挙に作成できるように用意されています。
