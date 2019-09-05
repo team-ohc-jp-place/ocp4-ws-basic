@@ -17,7 +17,6 @@
 ![](images/ocp4-lab2-1-about-existed-image.png)
 
 ### 1-1-2. 事前準備
-- 踏み台サーバー(Bastion Server)へのアクセス情報
 - OpenShift4クラスターへのアクセス情報
 
 >自身でハンズオンを実施される場合は，事前に以下を準備ください。
@@ -38,7 +37,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
     ![](images/ocp4-lab2-1-create-project.png)
 
 1. プロジェクト名(例: `workshop-terminal-user00` )を指定し，**Create** を選択します。  
-    
+  
     プロジェクト名には，**必ずご自身のログイン時のユーザー名 (例: "workshop-terminal-user00")** を指定してください。  
     複数人でクラスターを共有しているため，他の人と重複しないプロジェクト名を指定する必要があります。  
 

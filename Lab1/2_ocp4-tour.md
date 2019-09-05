@@ -5,8 +5,6 @@
 - C) クラスターを構成するNodeの確認 ([2-3-2](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/2_ocp4-tour.md#2-3-2-%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8Bnode%E3%81%AE%E7%A2%BA%E8%AA%8D))
 - D) K8sワークロード の動作確認 ([2-3-3](https://github.com/capsmalt/ocp4ws-basic/blob/master/Lab1/2_ocp4-tour.md#2-3-3-k8s%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%89-%E3%81%AE%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D-oc%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E7%94%A8))
 
-![](images/ocp4-Lab1-2_overview.png)
-
 ## 2-1. 諸注意
 ### 2-1-1. OpenShift4へのログイン方法
 - **ocコマンド** : kubectlをwrapしたOpenShift4を制御するCLIでログイン
@@ -14,6 +12,7 @@
   - `oc get pods -n default`: defaultネームスペースのPodを一覧表示
   - `kubectl get pods -n default` : kubectlも使用可
   - etc.
+  - ※今回はSetupして頂いたCodeReady Workspace上のターミナルからocコマンドをご利用頂けます
 - **OpenShift4コンソール** : OpenShift4の専用コンソール画面にブラウザからログイン
   - PodやDeployment，Secretなどのワークロードや，ServiceやPVCなどの作成および編集
   - ワークロードやNodeの状態確認やモニタリング
@@ -21,7 +20,6 @@
   - クラスター設定やネームスペース，ロール管理などのAdmin作業
   - etc.
 ### 2-1-2. 事前準備
-- 踏み台サーバー(Bastion Server)へのアクセス情報
 - OpenShift4クラスターへのアクセス情報
 
 >自身でハンズオンを実施される場合は，事前に以下を準備ください。
@@ -31,35 +29,19 @@
 
 ## 2-2. OpenShift4へのログイン
 ### 2-2-1. ocコマンドによるログイン(oc login)
-1. 踏み台サーバー(Bastion Server)にSSHでログインします。
-    ```
-    $ ssh -i <Private_Key> <Bastion_User_ID>@<Bastion_Server_IP>
+1. Setupで作成したCodeReady Workspacesを開いてください。右下のTerminalタブを選択すると、ブラウザ上でTerminalが操作できるようになります。以降コマンドが必要な作業は全てこちらのTerminalで操作して頂きます。
+    
+    ![](images/codeready_1.png)
   
-    y
-    ```
-
-    >**※注意: ワークショップ参加者の方は，必ず自身に割当てられた <Bastion_User_ID>，<Bastion_Servier_IP>，<Private_Key> を使用してください。**  
-    >
-    >
-    >例) 「踏み台サーバー(Bastion Server)」のSSHログイン情報
-    > - `<Bastion_User_ID>`: **user00**
-    > - `<Bastion_Server_IP>`: **1.2.3.4**
-    > - `<Private_Key>`: **bs-key.pem**
-    >
-    >実行例) 
-    >```
-    >$ ssh -i bs-key.pem user00@1.2.3.4
-    >```
-
 1. OpenShift4クラスターにocコマンドでログインします。
-
+    
     ```
-    $ oc login <OpenShift_API>
-
+  $ oc login <OpenShift_API>
+    
     Username: "<User_ID>" を入力
-    Password: "<User_PW>" を入力
+Password: "<User_PW>" を入力
     ```
-
+    
     >**※注意: ワークショップ参加者の方は，必ず自身に割当てられた <OpenShift_API>，<User_ID>，<User_PW> を使用してください。**  
     >
     >
@@ -70,7 +52,7 @@
     >
     >実行例) 
     >```
-    >$ oc login https://api.group00-ocp4ws-basic.capsmalt.org:6443  
+>$ oc login https://api.group00-ocp4ws-basic.capsmalt.org:6443  
     >Username: user00
     >Password: openshift
     >```
@@ -115,9 +97,9 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
 
 
     ![](images/ocp4-console-create-project-3.png)
-
+    
     また，作成したプロジェクトは，[Home] > [Projects] と辿ることで確認できます。
-
+    
     ![](images/ocp4-console-project.png)
 
 ### 2-3-1. プロジェクトのリソース利用状況の確認
@@ -165,7 +147,8 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
 
     >折れ線グラフにカーソルを合わせると詳細情報が表示されます。
     >Prometheusに対して，以下のQueryを投げることで上図の情報を抽出しています。
-    > - Query: `namespaces:container_cpu_usage:sum{namespace='openshift-console'}`
+    >
+    >- Query: `namespaces:container_cpu_usage:sum{namespace='openshift-console'}`
 
 1. 任意のメトリクスを指定して描画してみます。
 
@@ -244,7 +227,7 @@ group00-ocp4ws-basic-b9qqj-worker-ap-northeast-1a-t6rgd` や `group00-ocp4ws-bas
     [Events]タブでは，Nodeに起こったイベントについて時系列に表示されます。現時点では何も起こっていないので出力はありませんが，Nodeのステータスが変わったり，例えば割当リソースが変わったりなどの変化が起こると出力されます。
     
 1. Nodeに対する操作(Action)を以下図のようにメニューを開いて確認します。
-    
+  
     ![](images/ocp4-compute-nodes-worker_action.png)  
 
     ラベルの追加や削除などの変更をUI上で簡易的に行えます。  

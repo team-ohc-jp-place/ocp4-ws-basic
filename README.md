@@ -3,7 +3,6 @@
 インフラ向け応用編(Operator他)および開発向け応用編(CodeReady他)のワークショップも不定期開催しています。
 
 OpenShift4基礎編では以下を学びます。
-- OpenShift4クラスターの構築 (本日は実施しません。クラスターは構築済です。)
 - OpenShift4クラスターへのログインと動作確認
 - コンテナイメージのビルドとデプロイ
 - Jenkinsベースのビルドパイプラインの使用
@@ -12,22 +11,18 @@ OpenShift4基礎編では以下を学びます。
 ### Lab2: [Jenkinsベースのビルドパイプラインの使用，その他](Lab2)
 
 # ハンズオン環境
-本ハンズオンは，Kubernetesクラスター(OpenShift4)の動作環境としてAWSを使用します。今回は構築済です。  
+本ハンズオンは，構築済みのOpenShift(OCP)クラスターを参加者全員で共有して作業を進めます。
 
-OpenShift4クラスターに対するCLI操作をを行う際は，クライアントPCから，踏み台サーバー(Bastion Server)にSSH接続し，**ocコマンド** を使って制御します。  
-`クライントPC <--SSH--> 踏み台サーバー <--oc--> OpenShift4クラスター`
+OCPクラスターに対するCLI操作を行う際は，CodeReady Workspaceにユーザー登録して頂き、作成した開発環境から行います。GUI操作は，クライアントPCのブラウザ(**Chrome/Firefox推奨**)を使用します。
 
-![](images/handson-env.png)
+[Setup Workspace](setup_workspace) をご確認の上、ご自身の開発環境をセットアップしてください。本日のCodeReady WorkspaceのURLは下記になります。
+
+http://codeready-codeready.apps.dev.ocp41.nosue.mobi
 
 GUI操作は，クライアントPCのブラウザ(**Chrome/Firefox推奨**)を使用します。  
 
 # 前提
-- SSH用ツール (EC2への接続する際に使用します)
 - ブラウザ (Google Chrome or Firefox)
-- ブラウザでの接続テスト
-  - 下記リンクにブラウザからアクセスし，メモ帳アプリに正常アクセスできるか確認してください。
-  - http://bit.ly/connectivity-test
-  - **接続できない環境の場合はハンズオンを実施できない場合があります (サポートが必要な場合は担当者まで連絡ください)**
 
 # 注意事項
 OpenShift4クラスター接続情報など当日の連絡事項 (Etherpad) ==> 当日ご案内します
