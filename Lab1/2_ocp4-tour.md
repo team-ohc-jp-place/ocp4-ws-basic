@@ -63,7 +63,7 @@
 >**注意: ワークショップ参加者の方は，必ず自身に割当てられた <OpenShift_Console>，<User_ID>，<User_PW> を使用してください。**  
 >例) 「OpenShift4コンソール」のログイン情報
 > - `<OpenShift_Console>`: **https://console-openshift-console.apps.ws.ocp41.nosue.mobi**
-> - capsmalt's group を選択
+> - capsmalt's group or htpasswd を選択
 > - `<User_ID>`: **user00**
 > - `<User_PW>`: **openshift**
 
