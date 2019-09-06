@@ -23,7 +23,7 @@ http://codeready-codeready.apps.ws.ocp41.nosue.mobi
 - ブラウザ (Google Chrome or Firefox)
 
 # 注意事項
-OpenShift4クラスター接続情報など当日の連絡事項 (Etherpad) ==> 当日ご案内します
+OpenShift4クラスター接続情報など当日の連絡事項 (Etherpad) ==> http://bit.ly/openshift-20190906
 
 # タイムテーブル
 Red Hat OpenShift Container Platform 4 ワークショップ
