@@ -63,7 +63,7 @@
 >**注意: ワークショップ参加者の方は，必ず自身に割当てられた <OpenShift_Console>，<User_ID>，<User_PW> を使用してください。**  
 >例) 「OpenShift4コンソール」のログイン情報
 > - `<OpenShift_Console>`: **https://console-openshift-console.apps.ws.ocp41.nosue.mobi**
-> - capsmalt's group or htpasswd を選択
+> - 「capsmalt's group」 または 「users.htpasswd」 を選択
 > - `<User_ID>`: **user00**
 > - `<User_PW>`: **openshift**
 
@@ -71,7 +71,7 @@ Privacy Errorが出た場合は，[Advanced] > [Proceed to oauth-openshift.apps.
 
 ![](images/ocp4-console-login-error.png)
 
-[capsmalt's group] または [htpasswd]を選択し，ログイン情報を入力してコンソールにログインします。
+[capsmalt's group] または [users.htpasswd]を選択し，ログイン情報を入力してコンソールにログインします。
 
 ![](images/ocp4-console-login-group.png)
 
