@@ -47,13 +47,13 @@
     >
     >例) 「OpenShift_API」へのログイン情報
     > - `<OpenShift_API>`: **https://api.ws.ocp41.nosue.mobi:6443**
-    > - `<User_ID>`: **user00**
+    > - `<User_ID>`: **dev00**
     > - `<User_PW>`: **openshift**
     >
     >実行例) 
     >```
     >$ oc login https://api.ws.ocp41.nosue.mobi:6443  
-    >Username: user00
+    >Username: dev00
     >Password: openshift
     >```
 
@@ -64,7 +64,7 @@
 >例) 「OpenShift4コンソール」のログイン情報
 > - `<OpenShift_Console>`: **https://console-openshift-console.apps.ws.ocp41.nosue.mobi**
 > - 「capsmalt's group」 または 「users.htpasswd」 を選択
-> - `<User_ID>`: **user00**
+> - `<User_ID>`: **dev00**
 > - `<User_PW>`: **openshift**
 
 Privacy Errorが出た場合は，[Advanced] > [Proceed to oauth-openshift.apps.ws.ocp41.nosue.mobi (unsafe)] のように選択して進めてください。
@@ -91,7 +91,7 @@ OpenShift4コンソールで各自のプロジェクトを作成しましょう�
 
     >コンソール右上のユーザー名が自身の<User_ID>であることを確認しましょう
 
-1. プロジェクト名(例: `user00-lab1-2` )を指定し，**Create** を選択します。  
+1. プロジェクト名(例: `dev00-lab1-2` )を指定し，**Create** を選択します。  
 
     ![](images/ocp4-console-create-project-2.png)
 
@@ -313,15 +313,15 @@ ocコマンドを使用して，K8sワークロードの動作状況を確認し
     openshift-service-ca-operator                                          Active
     openshift-service-catalog-apiserver-operator                           Active
     openshift-service-catalog-controller-manager-operator                  Active
-    user00-lab1-2                                                          Active
+    dev00-lab1-2                                                           Active
     ```
 
 1. 2-3. で作成した自身のプロジェクトを検索し，操作対象として切替えます。
 
     ```
-    $ oc get project | grep user00*
+    $ oc get project | grep dev00*
 
-    user00-lab1-2                                                          Active
+    dev00-lab1-2                                                          Active
     ```
 
     プロジェクトを切替えて操作してみましょう。
@@ -331,26 +331,26 @@ ocコマンドを使用して，K8sワークロードの動作状況を確認し
 
     >実行例)  
     >```
-    >$ oc project user00-lab1-2
+    >$ oc project dev00-lab1-2
     >
-    >Now using project "user00-lab1-2" on server "https://api.ws.ocp41.nosue.mobi:6443".
+    >Now using project "dev00-lab1-2" on server "https://api.ws.ocp41.nosue.mobi:6443".
     >```
 
     >Tips:
-    >` $ oc project` でプロジェクトしておくことで，`-n user00-lab1-2` のようにネームスペース指定をする必要が無くなるため幾分便利になります。  
+    >` $ oc project` でプロジェクトしておくことで，`-n dev00-lab1-2` のようにネームスペース指定をする必要が無くなるため幾分便利になります。  
     > ※ただし，本ハンズオンの実行例においては，`$ oc project <プロジェクト名>` の実行有無に関係無く `-n` オプションを付与しています。  
 
 1. 自身のプロジェクト内のワークロードを確認します。
     > コマンド実行時は，`-n <各自のプロジェクト名>` に読み替えてください。
 
     ```
-    $ oc get po -n user00-lab1-2
+    $ oc get po -n dev00-lab1-2
     No resources found.
 
-    $ oc get deploy -n user00-lab1-2    
+    $ oc get deploy -n dev00-lab1-2    
     No resources found.
 
-    $ oc get svc -n user00-lab1-2
+    $ oc get svc -n dev00-lab1-2
     No resources found.
     ```
 

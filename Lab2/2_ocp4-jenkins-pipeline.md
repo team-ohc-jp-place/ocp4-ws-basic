@@ -28,12 +28,12 @@ ocコマンドを使用して，クラスターにログインします。
 >
 
 ### 2-2-1. Jenkinsコンテナのインストール
-1. 新規プロジェクトを作成します。  **(例: jenkins-user00)**
+1. 新規プロジェクトを作成します。  **(例: jenkins-dev00)**
 
     ```
-    $ oc new-project jenkins-user00 (<== ご自身のプロジェクト名)
+    $ oc new-project jenkins-dev00 (<== ご自身のプロジェクト名)
     $ oc project
-    Using project "jenkins-user00" on server XXXXXXX
+    Using project "jenkins-dev00" on server XXXXXXX
     
     上記のように出力確認できればOKです
     ```
@@ -47,7 +47,7 @@ ocコマンドを使用して，クラスターにログインします。
     jenkins-ephemeral: 永続化なし <== 今回はこちらを使用
     jenkins-persistent: 永続化あり
 
-    $ oc new-app jenkins-ephemeral -n jenkins-user00  # -n 作成したプロジェクト名
+    $ oc new-app jenkins-ephemeral -n jenkins-dev00  # -n 作成したプロジェクト名
     $ oc get pods
     $ oc project
     ```
@@ -56,7 +56,7 @@ ocコマンドを使用して，クラスターにログインします。
 1. Jenkinsにパイプライン設定(nodejs-sample-pipeline)を入れます。
 
     ```
-    $ oc create -f https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/nodejs-sample-pipeline.yaml -n jenkins-user00
+    $ oc create -f https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/nodejs-sample-pipeline.yaml -n jenkins-dev00
     
     $ oc get buildconfigs
     nodejs-sample-pipeline  # oc createで作成されたPipeline
@@ -77,21 +77,21 @@ ocコマンドを使用して，クラスターにログインします。
     ```
     $ oc get route
     NAME                     HOST/PORT                                                                      PATH   SERVICES                 PORT    TERMINATION     WILDCARD
-    jenkins                  jenkins-jenkins-user00.apps.group00-ocp4ws-basic.capsmalt.org                         jenkins                  <all>   edge/Redirect   None
+    jenkins                  jenkins-jenkins-dev00.apps.group00-ocp4ws-basic.capsmalt.org                         jenkins                  <all>   edge/Redirect   None
     ```
     
     上記出力結果の "HOST/PORT" の情報をコピーして，ブラウザのURL欄にペーストして確認します。  
-    (例: `jenkins-jenkins-user00.apps.ws.ocp41.nosue.mobi`)
+    (例: `jenkins-jenkins-dev00.apps.ws.ocp41.nosue.mobi`)
 
     OpenShift4のログイン情報を使用してJenkinsのUIにログインします。
     
     ![](images/jenkins_login_1.png)
     
-    **自身のプロジェクト名** を選択します。(例: jenkins-user00)
+    **自身のプロジェクト名** を選択します。(例: jenkins-dev00)
     
     ![](images/ocp4-lab2-2-jenkins-pipeline-1.png)
 
-    **プロジェクト名/パイプライン名** を選択します (例: jenkins-user00/nodejs-sample-pipeline)
+    **プロジェクト名/パイプライン名** を選択します (例: jenkins-dev00/nodejs-sample-pipeline)
     
     ![](images/ocp4-lab2-2-jenkins-pipeline-2.png)
 
@@ -115,7 +115,7 @@ ocコマンドを使用して，クラスターにログインします。
     metadata:
       ...
       name: nodejs-sample-pipeline
-      namespace: jenkins-user00
+      namespace: jenkins-dev00
       ...
     spec:
       ...
@@ -218,12 +218,12 @@ ocコマンドを使用して，クラスターにログインします。
     ```
     $ oc get route
     NAME                     HOST/PORT                                                                      PATH   SERVICES                 PORT    TERMINATION     WILDCARD
-    jenkins                  jenkins-jenkins-user00.apps.group00-ocp4ws-basic.capsmalt.org                         jenkins                  <all>   edge/Redirect   None
-    nodejs-mongodb-example   nodejs-mongodb-example-jenkins-user00.apps.group00-ocp4ws-basic.capsmalt.org          nodejs-mongodb-example   <all>                   None
+    jenkins                  jenkins-jenkins-dev00.apps.group00-ocp4ws-basic.capsmalt.org                         jenkins                  <all>   edge/Redirect   None
+    nodejs-mongodb-example   nodejs-mongodb-example-jenkins-dev00.apps.group00-ocp4ws-basic.capsmalt.org          nodejs-mongodb-example   <all>                   None
     ```
 
     上記出力結果の "HOST/PORT" の情報をコピーして，ブラウザのURL欄にペーストして確認します。  
-    (例: `nodejs-mongodb-example-jenkins-user00.apps.ws.ocp41.nosue.mobi`)  
+    (例: `nodejs-mongodb-example-jenkins-dev00.apps.ws.ocp41.nosue.mobi`)  
 
     ![](images/ocp4-lab2-2-jenkins-pipeline-nodejs-app-confirm.png)
     
